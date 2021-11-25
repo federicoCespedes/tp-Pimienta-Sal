@@ -14,17 +14,22 @@
       <!-- Menu Section -->
       <div class="ps-row ps-padding-64" id="menu">
         <div class="ps-col l6 ps-padding-large">
-          <h1 class="ps-center"><%= plato.title %></h1>
+          <h1 class="ps-center"><%= plato.title %> </h1>
           <br />
-          <h4><%= plato.description %></h4>
+          <% if (typeof plato.description !== 'undefined' && plato.description) { %>
+            <h4><%= plato.description %> </h4>
+            <% } else {%>
+              <h4>Plato típico</h4>
+              <% }  %> 
+         
           <p class="ps-text-grey">
-            <%= plato.price.toFixed(2) %>
+            U$S <%= plato.price.toFixed(2) %> 
           </p>
         </div>
 
         <div class="ps-col l6 ps-padding-large ps-img-menu">
           <img
-            src="/images/<%= plato.image %>"
+            src="/images/<%= plato.image %> "
             class="ps-round ps-image ps-opacity-min"
             alt="Menu"
           />
@@ -32,7 +37,7 @@
       </div>
 
       <!-- Footer -->
-      <%- include('./partials/footer') %>
+      <%- include('./partials/footer') %> 
     </div>
   </body>
 </html>
